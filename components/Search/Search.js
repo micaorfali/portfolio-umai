@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Search = () => {
+const Search = ({ search }) => {
   return (
     <>
       <div className="field has-addons">
@@ -8,7 +8,9 @@ const Search = () => {
           <input className="input" type="text" placeholder="Find a project" />
         </div>
         <div className="control">
-          <button className="button is-info">Search</button>
+          <button onClick={search} className="button is-info">
+            Search
+          </button>
         </div>
       </div>
     </>

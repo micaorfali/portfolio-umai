@@ -44,9 +44,19 @@ const Grid = () => {
 
   const getCategoryName = (catId) => categories.find((item) => item.id === catId)?.description;
 
+  const searchByName = () => {
+    console.log("name");
+    const mipalabra= "Po";
+
+    console.log(products.filter((item) => item.title.includes(mipalabra.toLowerCase())));
+  }
+  searchByName();
+  // filter todos los proyectos cuyo title sea igual a mi palabra
+
+
   return (
     <>
-      <Search />
+      <Search search={searchByName} />
       <div className={`grid inner`}>
         {!loading &&
           products.map(({ id, title, student, catId, ano, img, desc }) => (
