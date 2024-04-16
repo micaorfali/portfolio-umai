@@ -1,0 +1,59 @@
+.container{
+    box-shadow: 0 -3px 10px 1px whitesmoke;
+}
+
+@media (min-width: 481px) and (max-width: 1199px){
+    .containerdiv{
+        width: 100%;
+        padding-left: 0 !important;
+    }
+
+    .containerimg{
+        width: 20% !important;
+        padding: 1em 0 1em 1em !important;
+    }
+
+    .containermenu{
+        width: 50%;
+        height: 60px !important;
+    }
+
+    .menu{
+        right: 0em !important;
+    }
+
+    .img{
+        min-width: 90% !important;
+        max-width: 90% !important;
+        min-height: 90% !important;
+        max-height: 90% !important;
+    }
+  }
+
+@media (max-width: 480px){
+    .containerdiv{
+        width: 100%;
+        padding-left: 0 !important;
+    }
+
+    .containerimg{
+        width: 50%;
+        padding: 1em 0 1em 1em !important;
+    }
+
+    .containermenu{
+        width: 50%;
+        height: 60px !important;
+    }
+
+    .menu{
+        left: 0 !important;
+    }
+
+    .img{
+        min-width: 90% !important;
+        max-width: 90% !important;
+        min-height: 90% !important;
+        max-height: 90% !important;
+    }
+  }

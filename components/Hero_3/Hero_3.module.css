@@ -1,0 +1,6 @@
+.container{
+    background-image: url('/assets/herofavoritos.png');
+    width: 100%;
+    background-position: 10% 55%;
+    background-size: cover;
+}

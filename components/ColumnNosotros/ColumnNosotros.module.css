@@ -1,0 +1,30 @@
+.divrounded{
+    display: flex;
+    padding: 0;
+    margin: 2em 0;
+}
+
+.columnspecial{
+    margin: 0 !important;
+}
+
+@media (min-width: 481px) and (max-width: 1199px){
+    .divrounded{
+        justify-content: center;
+        margin: 3em 0;
+    }
+    
+    .containercolumn{
+        display: flex;
+    }
+
+    .columnspecial{
+        display: flex;
+    }
+  }
+
+@media (max-width: 480px){
+    .divrounded{
+        margin: 2em 0;
+    }
+  }

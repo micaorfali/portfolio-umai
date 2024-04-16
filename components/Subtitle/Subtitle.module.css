@@ -1,0 +1,17 @@
+.container{
+    color: #6F2977;
+}
+
+@media (min-width: 481px) and (max-width: 1199px){
+    .container{
+        font-size: 1.5rem !important;
+        line-height: 30px !important;
+    }
+  }
+
+@media (max-width: 480px){
+    .container{
+        font-size: 1rem !important;
+        line-height: 26px !important;
+    }
+  }

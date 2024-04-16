@@ -1,0 +1,43 @@
+.container{
+    border-radius: 10px;
+    background-color: #383838;
+}
+
+.title{
+    color: white;
+    padding-top: 1em;
+}
+
+.text{
+    color: white;
+}
+
+.boton{
+    background-color: #6F2977;
+    border: transparent;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.boton:hover{
+    color: white;
+    opacity: 0.9;
+}
+
+.tagg{
+    background-color: #6F2977!important;
+    color: white!important;
+}
+
+.figurecontainer{
+    width: 100%;
+    height: auto;
+}
+
+.favs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
