@@ -5,7 +5,9 @@ import styles from './Footer.module.css';
 
 const Footer = () => {
   return (
-    <footer className={`footer ${styles['footercom']}`}>
+    <footer
+      className={`footer ${theme}?${styles['footercom']}:${styles['footercomlight']}`}
+    >
       <nav className={`navbar ${styles['footercontent']}`}>
         <div className={`navbar-brand ${styles['footerbrand']}`}>
           <a className="navbar-item" href="https://bulma.io">
