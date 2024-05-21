@@ -28,8 +28,14 @@ export default function Home() {
       <NavBar></NavBar>
       <Hero></Hero>
       <Title>Bienvenidos</Title>
-      <span>{theme ? 'esDark' : 'esLight'}</span>
-      <button onClick={changeTheme}>Cambiar modo</button>
+      <span
+        style={{
+          color: theme ? 'white' : 'black',
+          background: theme ? 'black' : 'white',
+        }}
+      >
+        {theme ? 'esDark' : 'esLight'}
+      </span>
       <About />
       <Subtitle>UMAI</Subtitle>
       <Title>Proyectos</Title>

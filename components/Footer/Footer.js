@@ -2,11 +2,18 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Footer.module.css';
+import { ThemeContext } from '../../contexts/ThemeContext';
+import { useContext } from 'react';
 
 const Footer = () => {
+  const { theme } = useContext(ThemeContext);
+  console.log(theme);
   return (
     <footer
-      className={`footer ${theme}?${styles['footercom']}:${styles['footercomlight']}`}
+      // className={`footer${styles['footercom']}`}
+      className={`footer ${
+        theme ? styles['footercom'] : styles['footercomlight']
+      }`}
     >
       <nav className={`navbar ${styles['footercontent']}`}>
         <div className={`navbar-brand ${styles['footerbrand']}`}>
@@ -21,7 +28,6 @@ const Footer = () => {
             </Link>
           </a>
         </div>
-
         <div
           id="navbarExampleTransparentExample"
           className={`navbar-menu ${styles['footernavbar']}`}
@@ -30,10 +36,15 @@ const Footer = () => {
             <div className="navbar-item">
               <div className="field is-grouped">
                 <p className="control">
-                  <a
-                    className={`bd-tw-button button ${styles['footerbutton']}`}
+                  <Link
+                    href="https://www.instagram.com/multimedia.umai/"
+                    passHref
                   >
-                    <Link href="https://www.instagram.com/multimedia.umai/">
+                    <a
+                      className={`bd-tw-button button ${styles['footerbutton']}`}
+                      target="_blank"
+                      rel="noopener"
+                    >
                       <Image
                         src="/assets/Instagram.svg"
                         alt="Bulma: a modern CSS framework based on Flexbox"
@@ -41,14 +52,16 @@ const Footer = () => {
                         height={20}
                         className={`${styles['img']}`}
                       />
-                    </Link>
-                  </a>
+                    </a>
+                  </Link>
                 </p>
                 <p className="control">
-                  <a
-                    className={`bd-tw-button button ${styles['footerbutton']}`}
-                  >
-                    <Link href="https://www.youtube.com/multimediaumai">
+                  <Link href="https://www.youtube.com/multimediaumai" passHref>
+                    <a
+                      className={`bd-tw-button button ${styles['footerbutton']}`}
+                      target="_blank"
+                      rel="noopener"
+                    >
                       <Image
                         src="/assets/YouTube.svg"
                         alt="Bulma: a modern CSS framework based on Flexbox"
@@ -56,14 +69,16 @@ const Footer = () => {
                         height={20}
                         className={`${styles['img']}`}
                       />
-                    </Link>
-                  </a>
+                    </a>
+                  </Link>
                 </p>
                 <p className="control">
-                  <a
-                    className={`bd-tw-button button ${styles['footerbutton']}`}
-                  >
-                    <Link href="https://twitter.com/MultimediaUMAI">
+                  <Link href="https://twitter.com/MultimediaUMAI" passHref>
+                    <a
+                      className={`bd-tw-button button ${styles['footerbutton']}`}
+                      target="_blank"
+                      rel="noopener"
+                    >
                       <Image
                         src="/assets/Twitter.svg"
                         alt="Bulma: a modern CSS framework based on Flexbox"
@@ -71,8 +86,8 @@ const Footer = () => {
                         height={20}
                         className={`${styles['img']}`}
                       />
-                    </Link>
-                  </a>
+                    </a>
+                  </Link>
                 </p>
               </div>
             </div>
