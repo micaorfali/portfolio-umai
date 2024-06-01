@@ -43,7 +43,7 @@ const GridDisenio = () => {
 
   return (
     <>
-      <div className={`grid inner`}>
+      <div className={`grid inner`} style={{ margin: '0 2em' }}>
         {!loading &&
           getProjectsByCategory('X6lvcp00fkQHHpcL30BG').map(
             ({ id, title, student, catId, ano, img, desc }) => (

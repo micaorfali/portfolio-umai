@@ -15,7 +15,7 @@ const Card = ({ title, student, img, ano, desc, catDescription }) => {
   };
 
   return (
-    <div className={`card ${styles['container']}`}>
+    <div className={`card cell ${styles['container']}`}>
       <div>
         <figure className={`${styles['figurecontainer']}`}>
           <Image src={img} alt="Placeholder image" width={1200} height={900} />
@@ -23,7 +23,7 @@ const Card = ({ title, student, img, ano, desc, catDescription }) => {
       </div>
       <div className="card-content">
         <div className="media">
-          <div className="media-content">
+          <div className="media-content" style={{ width: '100%' }}>
             <span className={`tag ${styles['tagg']}`}>{catDescription}</span>
 
             <p

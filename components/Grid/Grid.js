@@ -66,7 +66,7 @@ const Grid = () => {
           placeholder="Buscar por título..."
         />
       </div>
-      <div className={`grid inner`}>
+      <div className={`grid inner`} style={{ margin: '0 2em' }}>
         {!loading &&
           filteredProjects.map(
             ({ id, title, student, catId, ano, img, desc }) => (

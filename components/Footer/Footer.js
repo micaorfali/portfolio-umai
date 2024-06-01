@@ -15,16 +15,16 @@ const Footer = () => {
     >
       <nav className={`navbar ${styles['footercontent']}`}>
         <div className={`navbar-brand ${styles['footerbrand']}`}>
-          <a className="navbar-item" href="https://bulma.io">
-            <Link href="/">
+          <Link href="/">
+            <a className="navbar-item" href="https://bulma.io">
               <Image
                 src="/assets/logo.svg"
                 alt="Bulma: a modern CSS framework based on Flexbox"
                 width={112}
                 height={28}
-              />
-            </Link>
-          </a>
+              />{' '}
+            </a>
+          </Link>
         </div>
         <div
           id="navbarExampleTransparentExample"

@@ -44,7 +44,7 @@ const GridProgramacion = () => {
 
   return (
     <>
-      <div className={`grid inner`}>
+      <div className={`grid inner`} style={{ margin: '0 2em' }}>
         {!loading &&
           getProjectsByCategory('06qtRnl2dvkbd1d020E2').map(
             ({ id, title, student, catId, ano, img, desc }) => (
