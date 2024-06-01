@@ -15,7 +15,8 @@ const Card = ({ title, student, img, ano, desc, catDescription }) => {
   };
 
   return (
-    <div className={`card cell ${styles['container']}`}>
+    <div className={`card ${styles['container']}`}> 
+    {/* aca arriba estaba card */}
       <div>
         <figure className={`${styles['figurecontainer']}`}>
           <Image src={img} alt="Placeholder image" width={1200} height={900} />

@@ -66,11 +66,14 @@ const Grid = () => {
           placeholder="Buscar por título..."
         />
       </div>
-      <div className={`grid inner`} style={{ margin: '0 2em' }}>
+      <div
+        className={`columns is-multiline`}
+        style={{ margin: '0 2em' }}
+      >
         {!loading &&
           filteredProjects.map(
             ({ id, title, student, catId, ano, img, desc }) => (
-              <div key={id} className={`col_4`}>
+              <div key={id} className={`column is-one-third`}>
                 <Card
                   title={title}
                   id={id}
