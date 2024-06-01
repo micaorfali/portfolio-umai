@@ -7,12 +7,10 @@ import { useContext } from 'react';
 
 const Footer = () => {
   const { theme } = useContext(ThemeContext);
-  console.log(theme);
   return (
     <footer
-      // className={`footer${styles['footercom']}`}
       className={`footer ${
-        theme ? styles['footercom'] : styles['footercomlight']
+        theme ? styles['footercomlight'] : styles['footercom']
       }`}
     >
       <nav className={`navbar ${styles['footercontent']}`}>

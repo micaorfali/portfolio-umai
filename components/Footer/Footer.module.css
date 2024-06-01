@@ -1,11 +1,11 @@
-.footercom{
-    background-color: black;
+.footercomlight{
+    background-color: white!important;
     padding: 0.5rem;
     box-shadow: 0 4px 10px 1px whitesmoke;
 }
 
-.footercomlight{
-    background-color: white!important;
+.footercom{
+    background-color: black;
     padding: 0.5rem;
     box-shadow: 0 4px 10px 1px whitesmoke;
 }

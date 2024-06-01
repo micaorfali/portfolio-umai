@@ -3,7 +3,7 @@ import styles from './Card.module.css';
 import Image from 'next/image';
 import Lightbox from '../Lightbox/Lightbox';
 
-const Card = ({title, student, img, ano, desc, catDescription}) => {
+const Card = ({ title, student, img, ano, desc, catDescription }) => {
   const [stateModal, setStateModal] = useState(false);
 
   const changeStateModal = () => {
@@ -24,16 +24,19 @@ const Card = ({title, student, img, ano, desc, catDescription}) => {
       <div className="card-content">
         <div className="media">
           <div className="media-content">
-            <div className={`${styles['favs']}`}>
-              <span className={`tag ${styles['tagg']}`}>{catDescription}</span>
-              <Image
-                src="/assets/nofavorito.svg"
-                alt="Agregar a Favoritos"
-                width={30}
-                height={30}
-              />
-            </div>
-            <p className={`title is-4 ${styles['title']}`}>{title}</p>
+            <span className={`tag ${styles['tagg']}`}>{catDescription}</span>
+
+            <p
+              className={`title is-4 ${styles['title']}`}
+              style={{
+                whiteSpace: 'nowrap',
+                width: '90%',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+              }}
+            >
+              {title}
+            </p>
           </div>
         </div>
         <div onClick={() => changeStateModal()}>
@@ -43,7 +46,7 @@ const Card = ({title, student, img, ano, desc, catDescription}) => {
             src={img}
             student={student}
             ano={ano}
-            desc={desc} 
+            desc={desc}
           />
           <a className={`button ${styles['boton']}`}>VER</a>
         </div>

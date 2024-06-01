@@ -1,22 +1,31 @@
-import React from 'react';
-import Image from 'next/image';
+import React, { useContext, useState } from 'react';
 import Link from 'next/link';
-import styles from './NavBar.module.css';
-import { useContext } from 'react';
+import Image from 'next/image';
 import { ThemeContext } from '../../contexts/ThemeContext';
+import styles from './Navbar.module.css';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
-
 const NavBar = () => {
+  const { theme } = useContext(ThemeContext);
+  const [isActive, setIsActive] = useState(false);
+
+  const handleBurgerClick = () => {
+    setIsActive(!isActive);
+  };
+
   return (
     <nav
-      className={`navbar is-black is-fixed-top ${styles['container']}`}
+      className={`navbar is-fixed-top ${
+        theme
+          ? 'has-background-light has-text-dark'
+          : 'has-background-dark has-text-light'
+      } ${styles['container']}`}
       role="navigation"
       aria-label="main navigation"
     >
-      <div className={`navbar-brand ${styles['containerdiv']}`}>
+      <div className="navbar-brand">
         <Link href="/">
-          <a className={`navbar-item ${styles['containerimg']}`}>
+          <a className="navbar-item">
             <Image
               className={`${styles['img']}`}
               src="/assets/logo.svg"
@@ -27,24 +36,25 @@ const NavBar = () => {
           </a>
         </Link>
         <div
-          className={`navbar-burger ${styles['containermenu']}`}
+          className={`navbar-burger ${isActive ? 'is-active' : ''}`}
           data-target="navbarExampleTransparentExample"
+          onClick={handleBurgerClick}
         >
-          <span className={`${styles['menu']}`}></span>
-          <span className={`${styles['menu']}`}></span>
-          <span className={`${styles['menu']}`}></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
-      <div id="navbarExampleTransparentExample" className="navbar-menu">
+      <div
+        id="navbarExampleTransparentExample"
+        className={`navbar-menu ${isActive ? 'is-active' : ''}`}
+      >
         <div className="navbar-end pr-6">
           <Link href="/disenio">
             <a className="navbar-item has-text-weight-bold">Diseño</a>
           </Link>
           <Link href="/programacion">
             <a className="navbar-item has-text-weight-bold">Programación</a>
-          </Link>
-          <Link href="/favoritos">
-            <a className="navbar-item has-text-weight-bold">Favoritos</a>
           </Link>
           <ThemeToggle />
         </div>
