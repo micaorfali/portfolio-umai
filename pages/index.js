@@ -7,20 +7,11 @@ import Footer from '../components/Footer/Footer';
 import Subtitle from '../components/Subtitle/Subtitle';
 import Grid from '../components/Grid/Grid';
 import About from '../components/About/About';
-import { FavContext } from '../contexts/FavContext';
-import { useContext } from 'react';
 import ColumnNosotros from '../components/ColumnNosotros/ColumnNosotros';
 
 export default function Home() {
-  const { fav, setFav } = useContext(FavContext);
-
   return (
     <>
-      {/* 
-    {fav.map((item) => (
-        <p key={item.id}>{item.name} </p>
-    ))} 
-    */}
       <NavBar></NavBar>
       <Hero></Hero>
       <Title>Bienvenidos</Title>

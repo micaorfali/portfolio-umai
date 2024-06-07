@@ -1,6 +1,6 @@
 import CardRounded from '../CardRounded/CardRounded';
 import styles from './ColumnNosotros.module.css';
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { getFirestore } from '../../utils/firebase';
 
 const ColumnNosotros = () => {

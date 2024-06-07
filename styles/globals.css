@@ -72,3 +72,21 @@ a {
 .long_gap { grid-column-gap: 40px; }	
 	
 }
+
+
+:root {
+  --text-color: black;
+  --background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: white;
+    --background-color: black;
+  }
+}
+
+body {
+  color: var(--text-color);
+  background: var(--background-color);
+}

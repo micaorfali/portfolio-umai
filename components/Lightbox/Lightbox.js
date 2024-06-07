@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Lightbox.module.css';
 import Image from 'next/image';
 
-const Lightbox = ({ stateModal, src, student, ano, desc }) => {
+const Lightbox = ({ stateModal, src, ano, desc, title }) => {
   let className = '';
 
   if (stateModal) {
@@ -35,7 +35,7 @@ const Lightbox = ({ stateModal, src, student, ano, desc }) => {
               </figure>
             </div>
             <div className="has-text-centered">
-              <h1>{student}</h1>
+              <h1 className="has-text-weight-bold">{title}</h1>
               <p>Diseño - {ano} - 2021</p>
               <p>{desc}</p>
             </div>

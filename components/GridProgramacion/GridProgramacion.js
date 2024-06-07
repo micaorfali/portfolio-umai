@@ -1,20 +1,23 @@
 import { useState, useEffect } from 'react';
 import { getFirestore } from '../../utils/firebase';
 import { useRouter } from 'next/router';
-import styles from './Grid.module.css';
 import Card from '../Card/Card';
 
-const Grid = () => {
+const GridProgramacion = () => {
   const [projects, setProjects] = useState([]);
-  const [filteredProjects, setFilteredProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
-  const router = useRouter();
-  const [searchQuery, setSearchQuery] = useState('');
+
+  const getCategoryName = (catId) =>
+    categories.find(({ id }) => id === catId)?.description;
+
+  const getProjectsByCategory = (categoryId) => {
+    return projects.filter(({ catId }) => catId === categoryId);
+  };
 
   useEffect(() => {
+    setLoading(true);
     const getProjects = async () => {
-      setLoading(true);
       try {
         const db = getFirestore();
         const itemsCollection = db.collection(`projects`);
@@ -26,57 +29,30 @@ const Grid = () => {
         const items = itemSnapshot.docs.map((doc) => {
           return { id: doc.id, ...doc.data() };
         });
-
         const categories = categorySnapshot.docs.map((doc) => {
           return { id: doc.id, ...doc.data() };
         });
-
         setProjects(items);
-        setFilteredProjects(items);
-        setCategories(categories);
         setLoading(false);
+        setCategories(categories);
       } catch (error) {
         console.log(error);
       }
     };
-
     getProjects();
   }, []);
 
-  useEffect(() => {
-    const filtered = projects.filter((item) =>
-      item.title.toLowerCase().includes(searchQuery.toLowerCase()),
-    );
-    setFilteredProjects(filtered);
-  }, [searchQuery, projects]);
-
-  const goToProject = (id) => router.push(`/cardsProjects/${id}`);
-
-  const getCategoryName = (catId) =>
-    categories.find((item) => item.id === catId)?.description;
-
   return (
     <>
-      <div className={styles.searchBar} style={{ marginLeft: '2em' }}>
-        <input
-          style={{ width: '30%', height: '2em' }}
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Buscar por título..."
-        />
-      </div>
-      <div
-        className={`columns is-multiline`}
-        style={{ margin: '0 2em' }}
-      >
+      <div className={`grid inner`} style={{ margin: '0 2em' }}>
         {!loading &&
-          filteredProjects.map(
-            ({ id, title, studentId, catId, ano, img, desc }) => (
-              <div key={id} className={`column is-one-third`}>
+          getProjectsByCategory('06qtRnl2dvkbd1d020E2').map(
+            ({ id, title, student, catId, ano, img, desc }) => (
+              <div key={id} className={`col_4`}>
                 <Card
                   title={title}
                   id={id}
+                  student={student}
                   img={img}
                   ano={ano}
                   desc={desc}
@@ -91,4 +67,4 @@ const Grid = () => {
   );
 };
 
-export default Grid;
+export default GridProgramacion;

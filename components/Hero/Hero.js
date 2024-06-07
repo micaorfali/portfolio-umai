@@ -1,12 +1,7 @@
 import React from 'react';
 import styles from '../Hero/Hero.module.css';
 
-const imagenesHero = [
-  'hero.png',
-  'herodiseño.png',
-  'heroprog.png',
-  'herofavoritos.png',
-];
+const imagenesHero = ['hero.png', 'herodiseño.png', 'heroprog.png'];
 const Hero = () => {
   return (
     <section
