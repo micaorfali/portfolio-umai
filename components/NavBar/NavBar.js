@@ -19,15 +19,22 @@ const NavBar = () => {
         theme
           ? 'has-background-light has-text-dark'
           : 'has-background-dark has-text-light'
-      } ${styles['container']}`}
+      }`}
       role="navigation"
       aria-label="main navigation"
     >
       <div className="navbar-brand">
         <Link href="/">
-          <a className="navbar-item">
+          <a
+            className="navbar-item"
+            style={{
+              backgroundColor: '#aeaeae',
+              margin: '0.5em',
+              borderRadius: '10px',
+            }}
+          >
             <Image
-              className={`${styles['img']}`}
+              className={`${styles.img}`}
               src="/assets/logo.svg"
               alt="Bulma: a modern CSS framework based on Flexbox"
               width={124}
@@ -49,12 +56,24 @@ const NavBar = () => {
         id="navbarExampleTransparentExample"
         className={`navbar-menu ${isActive ? 'is-active' : ''}`}
       >
-        <div className="navbar-end pr-6">
+        <div className="navbar-end pr-6 navbar-item-custom-hover">
           <Link href="/disenio">
-            <a className="navbar-item has-text-weight-bold">Diseño</a>
+            <a
+              className={`navbar-item has-text-weight-bold ${
+                theme ? 'has-text-dark' : 'has-text-light'
+              }`}
+            >
+              Diseño
+            </a>
           </Link>
           <Link href="/programacion">
-            <a className="navbar-item has-text-weight-bold">Programación</a>
+            <a
+              className={`navbar-item has-text-weight-bold ${
+                theme ? 'has-text-dark' : 'has-text-light'
+              }`}
+            >
+              Programación
+            </a>
           </Link>
           <ThemeToggle />
         </div>

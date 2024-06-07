@@ -72,12 +72,11 @@ const Grid = () => {
       >
         {!loading &&
           filteredProjects.map(
-            ({ id, title, student, catId, ano, img, desc }) => (
+            ({ id, title, studentId, catId, ano, img, desc }) => (
               <div key={id} className={`column is-one-third`}>
                 <Card
                   title={title}
                   id={id}
-                  student={student}
                   img={img}
                   ano={ano}
                   desc={desc}
