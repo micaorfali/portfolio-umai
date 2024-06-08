@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import styles from './Navbar.module.css';
+import styles from './NavBar.module.css';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 const NavBar = () => {
